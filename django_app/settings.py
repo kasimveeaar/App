@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$)3&cv2!a4zp)crvo*_kqna14e5&3nq^c3s+4_sjuq1f%$_$%^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['https://vpay1.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
