@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Image Uploader{% endblock  %}
+ {% block content %}
+ <div class="container-fluid">
+  <div class="py-5 text-center bg-secondary text-white">
+    <h1 class="mb-3">Pan Image Upload</h1>
+    <br>
+    <h3 style="color: chartreuse;">Welcome  <span class="text-capitalize">{{request.user}}</span></h3>
+ <br>
+   <form action=""  method="POST"  enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>
+    <b>
+      Pan Card image upload: &nbsp
+    {{fm.forent_pan_image}} 
+  
+    </b>
+  </p>
+<input type="submit" class="btn btn-danger" value="Upload"> 
+{% for fm in messages %}
+<h2 class="btn btn-success m-1">
+{{fm}}
+</h2>
+{% endfor %}
+</form>
+  </div>
+</div>
+</div>
+
+{% endblock %}

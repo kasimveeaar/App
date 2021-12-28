@@ -1,0 +1,79 @@
+{% load static %}
+    <!--  -->
+  
+    
+    <nav class="navbar navbar-expand-sm navbar-light bg-light shadow p-3 mb-3 bg-body shadow p-5" >
+        <div class="container ">
+      <a class="navbar-brand " href="/" style="color: seagreen;" > <b>  VEE<span style="color: red;">PAY</span> </b> </a>
+          <button class="navbar-toggler" type="button"
+           data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+             aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="fas fa-house-user " style="color: seagreen;"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">About Us</a></li>
+                  <li><a class="dropdown-item" href="#">Blog</a></li>
+                  <li><a class="dropdown-item" href="#">Career</a></li>
+
+                  {%if request.user.is_authenticated %}
+                  <li><a class="dropdown-item" href="{% url 'changepassword' %}">Change Password</a></li>
+                  {% endif %}
+                  
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                </ul>
+              {% if request.user.is_authenticated %}
+
+              </li>
+             <style>
+               b{
+                 color: black;
+               }
+             </style>
+             <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}"><b>&nbsp   Profile </b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'transaction' %}"><b>&nbsp   Transaction </b></a>
+            </li>
+            
+            
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}"><b>&nbsp   Logout </b></a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/adhar"><b>&nbsp   KYC </b></a>
+              </li>
+              
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link " href="/business"><b>&nbsp Business Solution</b> </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}"><b>&nbsp   Login</b></a>
+              </li>
+              {% endif %}
+            </ul>
+
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!--  -->
+
+
+
+
+

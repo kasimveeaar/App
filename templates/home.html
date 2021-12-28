@@ -1,0 +1,33 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block title %}Signup Page{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    {% for message in messages %}
+    <h2 class="btn btn-success m-1">
+    {{message}} 
+  </h2>
+    {% endfor %}
+    <h3> <b>Empower Cashless Economy</b></h3> <span>we enable next 
+        
+       &nbsp<p> generation digital payment</p></span>
+<div class="row " >
+<div class="col-sm-12">
+<img class="mt-5 shadow p-5 " src="{% static 'image/vbank.jpg' %}" alt=""  
+class="img-responsive float-end" width="500" height: auto;  style="max-width: 100%;"    >
+</div>
+<br>
+<br>
+
+<div class="col-sm-12">
+    <img class="mt-5 shadow p-5 " src="{% static 'image/vpay.jpg' %}" alt=""  
+    class="img-responsive float-start" width="500" height: auto;  style="max-width: 100%;"    >
+    </div>  
+</div>
+</div>
+
+
+
+   
+
+{% endblock  %}

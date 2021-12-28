@@ -1,0 +1,63 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block title %}Signup Page{% endblock %}
+{% block content %}
+   
+<div class="container-fluid mt-5 shadow p-5">
+   <style>
+        h3{
+            background-color: snow;
+         }
+      form{
+         background-color:skyblue;
+      }
+   </style>
+      
+        <h3 class="text-center">Profile </h3>
+        <hr>
+{% for fm in messages %}
+<h6 class="alert alert-success">{{fm}}</h6> 
+ {% endfor %}
+<div class="row">
+    <div class="col-sm-3">
+        <h4 class="text-center alert alert-info"> New Transaction</h4>
+    
+<form action="" method="POST" class="shadow p-5">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-success" value="Add">
+</form>
+    </div>
+  <div class="col-sm-8 offset-1">
+      <h4 class="text-cenetr alert alert-info">Your History Informetion</h4>
+      <h4>Your History</h4>
+     
+      <div class="card" style="width: auto; height: auto;">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">User History</h6>
+          <p class="card-text">
+            <tbody>
+                {% if history %}
+                {% for stu in history %}
+                <tr>
+                    <p>ID: &nbsp &nbsp {{forloop.counter}}</p> 
+                    <p>Type-Status:&nbsp &nbsp {{stu.transaction_type}}</p> 
+                    <p>Category:&nbsp &nbsp {{stu.category}}</p> 
+                    <p>Amount:&nbsp &nbsp {{stu.amount}}</p>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <h4 class="text-cenetr alert alert-warning">No Records Found</h4>
+                {% endif %}
+            </tbody> 
+          
+        </p>
+          
+        </div>
+      </div>
+  </div>  
+</div>
+</div>
+</div>
+
+{% endblock %}
