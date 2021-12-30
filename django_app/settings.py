@@ -27,7 +27,7 @@ DEBUG = False
 # DEBUG = True
 
 
-ALLOWED_HOSTS = ['https://vpay1.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
