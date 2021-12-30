@@ -27,7 +27,7 @@ DEBUG = False
 # DEBUG = True
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['vgopay.herokuapp.com','localhost']
 
 
 # Application definition
