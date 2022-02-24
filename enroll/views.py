@@ -24,8 +24,8 @@ def email_user(request):
   send_mail(
     'django test email', 
     'success recieve email', 
-    'kasimsaifi8826@gmail.com',
-    ['kasim@veeaargroup.com'],
+    '',
+    [''],
     fail_silently=False
   )
 
